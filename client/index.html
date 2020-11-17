@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <title>Controle de Clientes</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+
+    <div class="container">
+        <h1>Controle de Clientes</h1>
+
+        <button type="button" class="btn btn-primary btn-add-cliente" data-toggle="modal" data-target="#addClienteModal">
+          Abrir Modal
+        </button>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">CPF / CNPJ</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Endereço</th>
+              </tr>
+            </thead>
+            <tbody class="corpo-tabela">
+              <!--<tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr> -->
+              
+            </tbody>
+          </table>
+
+    </div>
+    <!-- container -->
+
+
+    <div class="modal" id="addClienteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Novo Cliente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="nomeCliente">Nome Completo:</label>
+              <input type="text" class="form-control" id="nomeCliente" />
+            </div>
+            <div class="form-group">
+              <label for="nascCliente">Data de Nascimento:</label>
+              <input type="date" class="form-control" id="nascCliente" />
+            </div>
+            <div class="form-group">
+              <label for="emailCliente">E-mail:</label>
+              <input type="text" class="form-control" id="emailCliente" />
+            </div>
+            <div class="form-group">
+              <label for="cpfCnpjCliente">CPF / CNPJ:</label>
+              <input type="text" class="form-control" id="cpfCnpjCliente" />
+            </div>
+            <div class="form-group">
+              <label for="telefoneCliente">Telefone:</label>
+              <input type="text" class="form-control" id="telefoneCliente" />
+            </div>
+            <div class="form-group">
+              <label for="enderecoCliente">Endereço:</label>
+              <input type="text" class="form-control" id="enderecoCliente" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="btnCadastrarCliente">Cadastrar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="assets/js/clientes.js"></script>
+    <script>
+
+      /**
+        * Deixa o campo de nome do cliente da modal adicionar cliente em foco por padrão 
+        * ao abrir a modal
+        */
+      $('#addClienteModal').on('shown.bs.modal', function () {
+        $('#nomeCliente').trigger('focus')
+      })
+    </script>
+  </body>
+</html>
